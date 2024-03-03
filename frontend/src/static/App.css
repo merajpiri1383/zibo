@@ -1,0 +1,10 @@
+*{
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --gray : rgba(0, 0, 0, 0.25);
+    --blue : rgb(0,110,255);
+}

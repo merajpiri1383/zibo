@@ -1,0 +1,11 @@
+from django.db import models
+from django.utils.text import slugify
+class Category(models.Model) : 
+    name = models.CharField(max_length=200)
+class Product(models.Model): 
+    name = models.CharField(max_length=200,db_index=True)
+    price = models.PositiveIntegerField()
+    image = models.ImageField(upload_to="products/images")
+    category = models.ForeignKey(to=Category,on_delete=models.CASCADE,related_name="products")
+    description = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
