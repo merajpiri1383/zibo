@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser,PermissionsMixin
-from django.utils.crypto import get_random_string
+from random import randint
 from user.manager import UserManager
 class User(AbstractBaseUser,PermissionsMixin) :
     email = models.EmailField(max_length=200,unique=True)
@@ -15,5 +15,5 @@ class User(AbstractBaseUser,PermissionsMixin) :
     def __str__(self):
         return self.email
     def save(self,**kwargs):
-        self.activation_code = get_random_string(30)
+        self.activation_code = randint(100000,999999)
         return super().save(**kwargs)

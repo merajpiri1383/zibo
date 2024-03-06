@@ -3,7 +3,7 @@ from product.models import Category,Product
 class CategoryWithoutProductSerializer(serializers.ModelSerializer) : 
     class Meta : 
         model = Category 
-        fields = ["id","name"]
+        fields = ["id","name","image"]
 class ProductSerializer(serializers.ModelSerializer) : 
     category = serializers.PrimaryKeyRelatedField(
         queryset=Category.objects.all(),
@@ -20,4 +20,4 @@ class CategorySerializer(serializers.ModelSerializer) :
     )
     class Meta : 
         model = Category 
-        fields = ["id","name","products"]
+        fields = ["id","name","image","products"]

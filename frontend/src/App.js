@@ -3,7 +3,8 @@ import "./static/form.css";
 import "./static/App.css";
 import Main from "./pages/main";
 import Settings from "./pages/settings";
-import AddProduct from "./components/settings/addProduct";
+import CreateProduct from "./components/settings/CreateProduct";
+import CreateCategory from "./components/settings/CreateCategory";
 import Navbar from "./components/navbar";
 const App = ()=> {
   return (
@@ -12,7 +13,8 @@ const App = ()=> {
           <Routes>
               <Route path="/" element={<Main />} />
               <Route path="/settings" element={<Settings />}>
-                <Route path="add-product" element={<AddProduct />} />
+                <Route path="create-product" element={<CreateProduct />} />
+                <Route path="create-category" element={<CreateCategory />} />
               </Route>
           </Routes>
       </BrowserRouter>
