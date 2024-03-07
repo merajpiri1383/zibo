@@ -6,7 +6,7 @@ class Category(models.Model) :
     def __str__(self): 
         return self.name
 class Product(models.Model): 
-    name = models.CharField(max_length=200,db_index=True)
+    name = models.CharField(max_length=200,db_index=True,unique=True)
     price = models.PositiveIntegerField()
     image = models.ImageField(upload_to="products/images")
     category = models.ForeignKey(to=Category,on_delete=models.CASCADE,related_name="products")

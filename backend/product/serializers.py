@@ -1,5 +1,6 @@
 from rest_framework import serializers 
 from product.models import Category,Product
+from django.urls import resolve
 class CategoryWithoutProductSerializer(serializers.ModelSerializer) : 
     class Meta : 
         model = Category 
@@ -21,3 +22,6 @@ class CategorySerializer(serializers.ModelSerializer) :
     class Meta : 
         model = Category 
         fields = ["id","name","image","products"]
+    def to_representation(self,instance):
+        context = super().to_representation(instance)
+        return context

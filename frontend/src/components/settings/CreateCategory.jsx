@@ -1,4 +1,6 @@
 import API from "../../api/api";
+import { ToastContainer , toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import {useState,useEffect} from "react";
 const CreateCategory = () => {
     const formData = new FormData();
@@ -10,7 +12,11 @@ const CreateCategory = () => {
         formData.append("image",file);
         try{
             const response = await API.post("/product/c/",formData);
-            console.log(response.data)
+            if (response.status === 201) {
+                toast.success(`'${name}' created successfully`);
+                setFile("");
+                setName("");
+            }
         }catch(error){
             console.log(error)
         }
@@ -22,15 +28,16 @@ const CreateCategory = () => {
             </div>
             <div className="form-group">
                 <input type="text" className="form-group-input" placeholder="name"
-                 onChange={(e)=> setName(e.target.value)} required />
+                 onChange={(e)=> setName(e.target.value)} required value={name} />
             </div>
             <div className="form-group">
                 <input type="file" className="form-group-input form-group-file" 
-                onChange={(e)=> setFile(e.target.files[0])} required />
+                onChange={(e)=> setFile(e.target.files[0])}  required />
             </div>
             <div className="form-group">
                 <button type="submit" className="form-group-button">create</button>
             </div>
+            <ToastContainer draggable={true} />
         </form>
     )
 };export default CreateCategory;

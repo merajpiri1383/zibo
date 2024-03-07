@@ -3,7 +3,7 @@
     border-radius: 10px;
     padding: 30px;
     margin: 30px auto;
-    width: 60%;
+    width: 90%;
 }
 .form .form-group{
     width: 100%;
@@ -22,7 +22,7 @@
     color: rgba(0, 0, 0, 0.381);
     font-size: 20px;
 }
-.form .form-group .form-group-input:focus{
+.form .form-group .form-group-input:focus,.form .form-group .form-group-select:active{
     outline: 1px solid var(--blue);
     box-shadow: 0 0 30px 1px rgba(0, 162, 255, 0.329);
     transition: 300ms;
@@ -37,6 +37,7 @@
 .form .form-group .form-group-button{
     width: 100%;
     padding: 7.5px;
+    outline: 0;
     font-size: 20px;
     background-color: var(--blue);
     color: white;
@@ -51,6 +52,16 @@
 .form .form-group .form-group-button:active{
     background-color: white;
     color: var(--blue);
+}
+.form .form-group .form-group-select{
+    width: 100%;
+    border: 1px solid var(--gray);
+    background-color: white;
+    color: rgba(0, 0, 0, 0.381);
+    padding: 10px;
+    font-size: 20px;
+    outline: 0;
+    border-radius: 5px;
 }
 @media only screen and (max-width: 768px){
     .form{

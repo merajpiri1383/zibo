@@ -8,6 +8,7 @@ const Navbar = () => {
         <div className="navbar">
             <ol className={showLinks?" show-links navbar-links":" hide-links navbar-links"}>
                 <Link className="navbar-link" to="/">Home</Link>
+                <Link className="navbar-link" to="/category/">Category</Link>
                 <Link className="navbar-link" to="/settings/">Settings</Link>
                 <Link className="navbar-link" >Cart</Link>
             </ol>

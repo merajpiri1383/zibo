@@ -5,4 +5,4 @@ urlpatterns = [
     path("c/<pk>/",views.CategoryAPIView.as_view()),
     path("",views.CreateListProductAPIView.as_view()),
     path("<pk>/",views.ProductAPIView.as_view()),
-]
+]  

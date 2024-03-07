@@ -7,4 +7,6 @@
 :root{
     --gray : rgba(0, 0, 0, 0.25);
     --blue : rgb(0,110,255);
+    --green : rgb(0, 216, 0) ;
+    --red : #ff2121;
 }
